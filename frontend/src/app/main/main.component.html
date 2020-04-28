@@ -1,0 +1,27 @@
+    <!-- Card Wider -->
+<div class="main">
+    <div class="container">
+        <div *ngIf="establishmentList">
+            <h5 class="text-light text-center mb-3">You are currently searching for establishments in {{currentLocation.name}}, {{currentLocation.administrative}}.</h5>
+        </div>
+        <div class="mt-3">
+            <app-filter (onChange)="updateFilters($event)"></app-filter>
+        </div>
+        <span class="mt-3 d-flex justify-content-center">
+            <div *ngIf="loading && !errorMessage" class="spinner-border text-light vert-center" style="width: 8rem; height: 8rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <h3 *ngIf="errorMessage && !establishmentList" class="text-light">{{errorMessage}}</h3>
+        </span>
+        <div class="masonry mt-1">
+            <div *ngFor="let est of establishmentList">
+                <div class="item">
+                    <app-establishment-card [establishment]="est" ></app-establishment-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    findmytakeout.com © 2020 --- findmytakeout is a search engine created to help individuals find food establishments that are operating under the restrictions of COVID-19.
+</div>

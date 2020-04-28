@@ -1,0 +1,135 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+// *************************************
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.btn {
+  margin: 0;
+}
+
+body {
+  background:#f0f0f0;
+  position: absolute;
+  width:100%;
+  padding:0;
+  margin:0;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+}
+
+section {
+  background:white;
+  margin:0 auto;
+  padding: 4em;
+  max-width: 800px;
+  h1 {
+    margin: 0 0 2em;
+  }
+}
+
+.filter-type {
+  margin: 50px 0 50px 0;
+}
+
+.filter {
+  background-color:rgb(30, 54, 85);
+  color: white;
+  border: rgb(255, 255, 255) 5px solid;
+  border-radius: 5px;
+  &:hover {
+    cursor:pointer;
+    background-color:rgb(181, 210, 247);
+    color: rgb(39, 39, 39);
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.bg-greyblue {
+  background: rgb(2,0,36);
+  background: linear-gradient(111deg, rgba(2,0,36,1) 0%, rgba(34,37,59,1) 0%, rgba(48,68,93,1) 100%);
+}
+
+.btn-greyblue {
+  background: rgb(2,0,36);
+  background: linear-gradient(111deg, rgba(2,0,36,1) 0%, rgba(34,37,59,1) 0%, rgba(48,68,93,1) 100%);
+  color:white;
+}
+
+.modal-footer {
+  
+  &:hover {
+    cursor: pointer;
+    background-color:rgb(242, 252, 255);
+  }
+}
+
+.filter-select {
+  width: 50%;
+  height: 40px;
+  background-color: white;
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  border-bottom: 1px solid rgba(36, 36, 36, 0.287);
+ &option {
+   background-color: black;
+ }
+}
+
+.filter-option {
+  -webkit-appearance: none;
+  background-color: black !important;
+}
+
+.filter-container {
+  background-color: #F5F5FA;
+  padding: 3px;
+  border-radius: 10px;
+}
+
+.clr-light {
+  background-color: #F5F5FA;
+}
+
+.disabled {
+  background: rgb(209, 209, 209);
+}
+
+.md-chip {
+  display: inline-block;
+  background: #e0e0e0;
+  padding: 0 12px;
+  border-radius: 32px;
+  font-size: 13px;
+  &.md-chip-hover:hover {
+    background: #ccc;
+  }
+}
+
+.vertical-alignment-helper {
+  display:table;
+  height: 100%;
+  width: 100%;
+  pointer-events:none; /* This makes sure that we can still click outside of the modal to close it */
+}
+
+.vertical-align-center {
+  /* To center vertically */
+  display: table-cell;
+  vertical-align: middle;
+  pointer-events:none;
+}
+
+.modal-content {
+  /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+  width:inherit;
+  max-width:inherit; /* For Bootstrap 4 - to avoid the modal window stretching full width */
+  height:inherit;
+  /* To center horizontally */
+  margin: 0 auto 5rem auto;
+  pointer-events: all;
+}

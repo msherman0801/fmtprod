@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <ul *ngFor="let validation of validationsList">
+            <a class="btn btn-secondary" (click)="approveEstablishment(validation)">Approve</a>
+            <div class="width-half">
+                <li>Owner's Name: {{validation.name}}</li>
+                <li>Establishment Name: {{validation.establishmentName}}</li>
+                <li>Email: {{validation.email}}</li>
+                <li>Telephone: {{validation.telephone}}</li>
+                <li>Website: {{validation.website}}</li>
+                <li>Type of Establishment: {{validation.type}}</li>
+                <li>Location: {{validation.location.value}}</li>
+                <li>Hours of Operation</li>
+                <ol *ngFor="let dateTime of validation.dateTime">
+                    <li>{{dateTime.day}} {{dateTime.openingTime.time}} {{dateTime.openingTime.zone}} - {{dateTime.closingTime.time}} {{dateTime.closingTime.zone}}</li>
+                </ol>
+            </div>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,204 @@
+<div class="body">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 est-form d-flex justify-content-center mb-3">
+                    <div class="col-md-10 card-block">
+                    <form [formGroup]="addEstablishmentForm" (ngSubmit)="addEstablishment()">
+                        <!--Body-->
+                        <br>
+                        <div class="indent">
+                            <h5>We just need a few details from you! Keeping it simple.</h5>
+                        </div>
+                        <!--Body-->
+
+                        <div class="form-group">
+                            <div class="md-form">
+                                <i class="fa fa-user prefix" style="color:rgb(14, 55, 100);"></i>
+                                <input type="text" id="name" class="form-control text-dark" placeholder="Your name" [formControlName]="'name'">
+                            </div>
+                            <div class="indent">
+                                <span class="text-danger" id="nameError" *ngIf="!addEstablishmentForm.controls.name.valid && addEstablishmentForm.controls.name.dirty">Please enter your first and last name.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="md-form">
+                                <i class="fa fa-building prefix" style="color:rgb(8,37,69);"></i>
+                                <input type="text" id="establishmentName" class="form-control text-dark" placeholder="Establishment Name" [formControlName]="'establishmentName'">
+                            </div>
+                            <div class="indent">
+                                <span class="text-danger" id="establishmentNameError" *ngIf="!addEstablishmentForm.controls.establishmentName.valid && addEstablishmentForm.controls.establishmentName.dirty">Please enter the name of your food establishment.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="md-form">
+                                <i class="fa fa-envelope prefix" style="color:rgb(8,37,69)"></i>
+                                <input type="text" id="email" class="form-control text-dark" placeholder="Your email" [formControlName]="'email'">
+                            </div>
+                            <div class="indent">
+                                <span class="text-danger" id="emailError" *ngIf="!addEstablishmentForm.controls.email.valid && addEstablishmentForm.controls.email.dirty">Please enter your best contact email address.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="md-form">
+                                <i class="fa fa-phone prefix" style="color:rgb(8,37,69)"></i>
+                                <input type="text" id="phoneNumber" class="form-control text-dark" placeholder="Phone number" [formControlName]="'telephone'">
+                            </div>
+                            <div class="indent">
+                                <span class="text-danger" id="telephoneError" *ngIf="!addEstablishmentForm.controls.telephone.valid && addEstablishmentForm.controls.telephone.dirty">Please enter your best 10-digit contact phone number.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="md-form">
+                                <i class="fa fa-desktop prefix" style="color:rgb(8,37,69)"></i>
+                                <input type="text" id="website" class="form-control text-dark" placeholder="Website" [formControlName]="'website'">
+                            </div>
+                            <div class="indent">
+                                <span class="text-danger" id="websiteError" *ngIf="!addEstablishmentForm.controls.website.valid && addEstablishmentForm.controls.website.dirty">Please enter the name your establishment's website.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="md-form">
+                                <i class="fa fa-coffee prefix" style="color:rgb(8,37,69)"></i>
+                                <select class="mdb-select round" id="cuisine" [formControlName]="'type'">
+                                    <option value="" disabled selected>Select a Type</option>
+                                    <option>Bar/Pub</option>
+                                    <option>Bakery</option>
+                                    <option>Brewery</option>
+                                    <option>Bistro</option>
+                                    <option>Beer Garden</option>
+                                    <option>Cafe/Coffee Shop</option>
+                                    <option>Chinese</option>
+                                    <option>Club/Cocktail Bar</option>
+                                    <option>Deli</option>
+                                    <option>Desserts</option>
+                                    <option>Diner</option>
+                                    <option>Fine Dining</option>
+                                    <option>Fast Food</option>
+                                    <option>Food Truck</option>
+                                    <option>Food Court</option>
+                                    <option>Indian</option>
+                                    <option>Juice Bar</option>
+                                    <option>Lounge</option>
+                                    <option>Pizzeria</option>
+                                    <option>Steakhouse</option>
+                                    <option>Sandwich Shop</option>
+                                    <option>Taqueria</option>
+                                    <option>Thai</option>
+                                    <option>Wine Bar</option>
+                                </select> 
+                                <div class="indent">
+                                    <span class="text-danger" id="cuisineError" *ngIf="!addEstablishmentForm.controls.type.valid && addEstablishmentForm.controls.type.dirty">Please select a food establishment type.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="md-form">
+                                    <i class="fa fa-location-arrow prefix" style="color:rgb(8,37,69);"></i>
+                                <div class="row">
+                                    <div class="col-md-10 mb-3">
+                                        <app-instantsearch [class]="'mdb-select'" (onChange)="location = $event.suggestion"></app-instantsearch>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--OPERATING HOURS LABELS-->
+                        <div class="indent">
+                            <h5>Below you can select the operating hours for your establishment. After selecting, press "Add Day" and repeat for more days.</h5>
+                        </div>
+                        <!--TIMES-->
+                        <div class="md-form">
+                            <i class="fa fa-clock prefix" style="color:rgb(8,37,69);"></i>
+                            <div class="row" formGroupName="operHours">
+                                <div class="col-md-12">
+                                    <select class="mdb-select round" [formControlName]="'day'" >
+                                        <option value="" disabled selected>Select a Day</option>
+                                        <option value="Monday">Monday</option>
+                                        <option value="Tuesday">Tuesday</option>
+                                        <option value="Wednesday">Wednesday</option>
+                                        <option value="Thursday">Thursday</option>
+                                        <option value="Friday">Friday</option>
+                                        <option value="Saturday">Saturday</option>
+                                        <option value="Sunday">Sunday</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6" formGroupName="openingTime">
+                                    <div class="indent font-weight-bold mt-3">Opening Time</div>
+                                    <select class="mdb-select round" formControlName='time' name="time">
+                                        <option value="" disabled selected>Time</option>
+                                        <option value="1:00">1:00</option>
+                                        <option value="2:00">2:00</option>
+                                        <option value="3:00">3:00</option>
+                                        <option value="4:00">4:00</option>
+                                        <option value="5:00">5:00</option>
+                                        <option value="6:00">6:00</option>
+                                        <option value="7:00">7:00</option>
+                                        <option value="8:00">8:00</option>
+                                        <option value="9:00">9:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                    </select> 
+                                    <select class="mdb-select round" formControlName="zone" name="zone">
+                                        <option value="" disabled selected>Select AM/PM</option>
+                                        <option value="AM">AM</option>
+                                        <option value="PM">PM</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6" formGroupName="closingTime">
+                                    <div class="indent font-weight-bold mt-3">Closing Time</div>
+                                    <select class="mdb-select round" formControlName="time" name="time">
+                                        <option value="" disabled selected>Time</option>
+                                        <option value="1:00">1:00</option>
+                                        <option value="2:00">2:00</option>
+                                        <option value="3:00">3:00</option>
+                                        <option value="4:00">4:00</option>
+                                        <option value="5:00">5:00</option>
+                                        <option value="6:00">6:00</option>
+                                        <option value="7:00">7:00</option>
+                                        <option value="8:00">8:00</option>
+                                        <option value="9:00">9:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                    </select>
+                                    <select class="mdb-select round" formControlName="zone" name="zone">
+                                        <option value="" disabled selected>Select AM/PM</option>
+                                        <option value="AM">AM</option>
+                                        <option value="PM">PM</option>
+                                    </select>
+                                </div>
+                                <button [disabled]="!addEstablishmentForm.controls.operHours.valid" type="button" class="indent btn btn-add unique-color-dark text-light" (click)="addDay()">Add Day</button>
+                            </div>
+                        </div>
+
+                        
+                        <div class="md-form">
+                            <div class="row">
+                                <div class="ml-3 text-dark" *ngFor="let day of days">
+                                    <h3>{{day.day}}</h3>
+                                    <h6>{{day.openingTime.time}} {{day.openingTime.zone}} - {{day.closingTime.time}} {{day.closingTime.zone}}</h6>
+                                    <!-- <app-operating-hours-select [day]="day" (onChange)="establishmentSubmit($event)"></app-operating-hours-select> -->
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="text-center mb-3">
+                            <h5>When you're finished, click the button below!</h5>
+                            <button [disabled]="!addEstablishmentForm.valid || days.length <= 0 || !location" class="btn unique-color-dark text-light">Submit this Establishment</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        findmytakeout.com © 2020 --- findmytakeout is a search engine created to help individuals find food establishments that are operating under the restrictions of COVID-19.
+    </div>

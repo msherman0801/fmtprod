@@ -1,0 +1,40 @@
+
+    <div *ngIf="establishment">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="font-weight-bold">{{establishment.type}}</div>
+                <div class="card-title h3">{{establishment.establishmentName}}</div>
+            </div>
+        </div>
+        <div class="card-text">
+                <a href="http://{{establishment.website}}" class="btn btn-sm btn-greyblue rounded">Website</a>&nbsp;
+                <a href="https://maps.google.com/?q={{establishment.location.latlng.lat}},{{establishment.location.latlng.lng}}" target="_blank" class="btn btn-sm btn-greyblue rounded">Directions</a>
+                <hr>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Details</h5>
+                        <div class="text-group">
+                            <p class="font-weight-bold">Telephone Number</p>
+                            {{establishment.telephone}}
+                        </div>
+                        <div class="text-group">
+                            <p class="font-weight-bold">Website</p>
+                            {{establishment.website}}
+                        </div>
+                        <div class="text-group">
+                            <p class="font-weight-bold">Location</p>
+                            {{establishment.location.name}}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Hours of Operation</h5>
+                        <ul *ngFor="let dt of establishment.dateTime">
+                            <div class="mt-2">
+                                <li class="font-weight-bold">{{dt.day}}</li>
+                                <li>{{dt.openingTime.time}}{{dt.openingTime.zone}} - {{dt.closingTime.time}}{{dt.closingTime.zone}}</li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>

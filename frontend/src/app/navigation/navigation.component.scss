@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+.navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    background: rgb(235, 244, 253);
+    // background: linear-gradient(356deg, rgba(2,0,36,1) 0%, rgba(2,0,36,1) 0%, rgba(2,112,157,1) 100%) !important;
+}
+
+.logo {
+    height: 40px
+}
+
+.nav-btn {
+    padding: 0 15px;
+    display: inline-block;
+    float:right;
+    height: 50px;
+    font-family: 'Quicksand', sans-serif;
+    vertical-align: middle; 
+    line-height: 50px;
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    // border-left: 1px solid rgb(41, 41, 41);
+    &:hover {
+        .nav-ico {
+            content: url("../../assets/arrow-light.png");
+        }
+        cursor: pointer;
+        background: rgb(24, 35, 59);
+        color: white;
+    }
+    &:focus {
+        outline: 0;
+    }
+}
+
+.nav-ico {
+    padding: 0 3px 3px 0;
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+}
+
+@media only screen and (max-width: 425px){
+    .logo {
+        height: 30px;
+    }
+}
+

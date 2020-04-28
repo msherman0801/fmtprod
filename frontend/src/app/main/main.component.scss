@@ -1,0 +1,82 @@
+.main {
+    padding-top: 20px !important;
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(111deg, rgba(2,0,36,1) 0%, rgb(4, 18, 46) 0%, rgba(20,112,157,1) 80%);
+}
+
+.footer {
+    color:rgb(22, 22, 22);
+    background: rgb(235,244,253);
+    bottom: 5px;
+    text-align: center;
+    font-size: 12px;
+    margin: auto;
+    padding: 1rem 1rem;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+.logo-box {
+    margin-bottom: 10px;
+    text-align:center;
+    border-radius: 50%;
+}
+.vert-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+  }
+
+.masonry { /* Masonry container */
+    column-count: 2;
+    column-gap: 1em;
+  }
+  
+  .item { /* Masonry bricks or child elements */
+    background-color: #eee;
+    display: inline-block;
+    margin: 0 0 1em;
+    width: 100%;
+  }
+
+  /* Box-sizing reset: //w3bits.com/?p=3225 */
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  /* The Masonry Container */
+  .masonry {
+    column-gap: 1.5em;
+  }
+  
+  /* The Masonry Brick */
+  .item {
+    overflow-wrap: break-word;
+    background: #fff;
+    padding: 1em;
+    margin: 0 0 1.5em;
+    width: 100%;
+  }
+  
+  /* Masonry on medium-sized screens */
+  @media only screen and (max-width: 1023px) and (min-width: 768px) {
+    .masonry {
+      column-count: 1;
+    }
+  }
+  
+  /* Masonry on small screens */
+  @media only screen and (max-width: 767px){
+    .masonry {
+      column-count: 1;
+    }
+  }

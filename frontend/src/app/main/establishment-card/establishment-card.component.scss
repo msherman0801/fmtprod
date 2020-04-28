@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+.btn {
+  margin: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    padding-inline-start: 0;
+}
+
+.bshadow {
+  box-shadow: 1px 1px 6px rgb(0, 0, 0);
+  transition: box-shadow 0.1s ease-in-out;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.card-title {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.button{
+    display: inline-block;
+    padding: 10px 10px;
+    margin: 20px 0;
+    position: relative;
+    color: #ecf0f1;
+  }
+
+#button-2:before{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    background-color: #34495e;
+    -webkit-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  #button-2:hover{
+    color: #ecf0f1;
+  }
+  
+  #button-2:hover:before{
+    top: 0;
+  }
+
+  .card {
+    background-color: #F5F5FA;
+  }
+
+  .btn-greyblue {
+    background: rgb(2,0,36);
+    background: linear-gradient(111deg, rgba(2,0,36,1) 0%, rgba(34,37,59,1) 0%, rgba(48,68,93,1) 100%);
+    color:white;
+  }
+
+  .text-group {
+    margin: 5px 0;
+    p {
+      margin:0;
+    }
+  }
+
+
+  //MASONRY
+
+  .masonry { /* Masonry container */
+    column-count: 2;
+    column-gap: 1em;
+  }
+  
+  .item { /* Masonry bricks or child elements */
+    background-color: #eee;
+    display: inline-block;
+    margin: 0 0 1em;
+    width: 100%;
+  }
+
+  /* Box-sizing reset: //w3bits.com/?p=3225 */
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  /* The Masonry Container */
+  .masonry {
+    column-gap: 1.5em;
+  }
+  
+  /* The Masonry Brick */
+  .item {
+    overflow-wrap: break-word;
+    background: #fff;
+    padding: 1em;
+    margin: 0 0 1.5em;
+    width: 100%;
+  }
+  
+  /* Masonry on small screens */
+  @media only screen and (max-width: 767px) {
+    .masonry {
+      column-count: 1;
+    }
+  }

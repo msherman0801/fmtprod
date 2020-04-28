@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+
+.body {
+    padding-top: 20px !important;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background: rgb(2,0,36);
+    background: linear-gradient(111deg, rgba(2,0,36,1) 0%, rgb(4, 18, 46) 0%, rgba(20,112,157,1) 80%);
+}
+
+.md-form {
+    margin-bottom: 0;
+}
+
+.footer {
+    color:rgb(22, 22, 22);
+    background: rgb(235,244,253);
+    bottom: 5px;
+    text-align: center;
+    font-size: 12px;
+    margin: auto;
+    padding: 1rem 1rem;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+
+.mdb-select {
+    line-height: 2 !important;
+    margin-left: 2.5rem;
+    width: calc(100% - 2.5rem);
+    font-family: "Roboto", sans-serif;
+    color: rgb(0, 0, 0);
+    border-radius: 0;
+    border: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    border-bottom: 1px solid #ced4da;
+    background-color: transparent;
+}
+.mdb-select option{
+    background-color: black !important;
+    line-height: 1.5rem !important;
+}
+
+.indent {
+    margin-left: 2.5rem;
+}
+
+.btn-add {
+    margin-top: 1rem;
+    margin-left: 3.2rem;
+}
+
+.bshadow {
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.267);
+    transition: box-shadow 0.1s ease-in-out;
+  }
+
+.bg-transparent {
+    background-color: rgba(24, 24, 24, 0.527) !important;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.est-form {
+    background-color: rgb(247, 247, 247);
+}
+
+::placeholder {
+    color: black;
+}
+
+select.round {
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgb(12, 12, 12) 50%),
+    linear-gradient(135deg, rgb(0, 0, 0) 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - .5em) .5em;
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat: no-repeat;
+}
+
+// select.round:focus {
+//   background-image:
+//     linear-gradient(45deg, white 50%, transparent 50%),
+//     linear-gradient(135deg, transparent 50%, white 50%),
+//     radial-gradient(gray 70%, transparent 72%);
+//   background-position:
+//     calc(100% - 15px) 1em,
+//     calc(100% - 20px) 1em,
+//     calc(100% - .5em) .5em;
+//   background-size:
+//     5px 5px,
+//     5px 5px,
+//     1.5em 1.5em;
+//   background-repeat: no-repeat;
+//   border-color: green;
+//   outline: 0;
+// }

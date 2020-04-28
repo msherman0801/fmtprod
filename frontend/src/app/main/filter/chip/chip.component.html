@@ -1,0 +1,8 @@
+<div class="md-chip m-1" *ngIf="remove == false">
+    <span>{{text}}</span>
+</div>
+
+<div class="md-chip md-chip-dark m-1" *ngIf="remove == true" (click)="removeChips()">
+    <span>{{text}}</span>
+    <button type="button" class="md-chip-remove"> </button>
+</div>
