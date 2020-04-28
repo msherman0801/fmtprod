@@ -24,6 +24,12 @@ app.use('/validation', validationRouter);
 app.use('/datetime', dateTimeRouter);
 app.use('/location', locationRouter);
 
+app.use(express.static('frontend/dist'));
+app.get('*', (req, res) => {
+res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
+});
+
+
 app.listen(port, () => {
     console.log(`Server  is running on ${port}.`)
 })
